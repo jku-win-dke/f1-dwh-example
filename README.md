@@ -269,6 +269,7 @@ For the 2023 season, return the race name, Grand Prix round, driver surname, pit
 
 The columns of the output should have the following names: race_name, gp_round, driver, stop_duration_secs, ferrari_avg_duration_ytd.
 
+```sql
 SELECT 
     ra.name AS race_name,
     ra.round AS gp_round, 
@@ -295,7 +296,9 @@ ORDER BY
 
 ### 2. Podium Points for First-Time Podium Finishers in 2023 (ROLLUP + NOT EXISTS)
 
-Constructor and driver podium points for the 2023 season, restricted to drivers who reached the top 3 in 2023 but never did so in 2022. ROLLUP adds a subtotal row per constructor.
+For the 2023 season, return the constructor name, driver surname, and total podium points earned by drivers who finished in the top three (positionOrder ≤ 3) in 2023 but did not achieve a podium finish in 2022. Aggregate the results using ROLLUP to include team-level totals. Sort the output by constructor name, driver surname, and total podium points.
+
+The columns of the output should have the following names: team_name, driver_name, podium_points
 
 ```sql
 SELECT 
@@ -329,7 +332,9 @@ ORDER BY
 
 ### 3. Hamilton 2023 — Places Gained per Race with LAG and Running Average (LAG + AVG)
 
-Start vs. finish position for each race, the change vs. the previous race, and the year-to-date running average of places gained.
+For the 2023 season and the driver Hamilton, return the Grand Prix round, race name, starting position, finishing position, places gained (start position − finishing position), the change in places gained compared to the previous race, and the cumulative season-to-date average of places gained. Compute the race-to-race change using LAG and the cumulative average using a windowed AVG function. Sort the output by Grand Prix round.
+
+The columns of the output should have the following names: grand_prix_round, race_name, start_position, end_position, gained_places, gain_diff_to_last_race, avg_gained_ytd
 
 ```sql
 SELECT 
