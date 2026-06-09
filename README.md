@@ -33,8 +33,6 @@ pgAdmin opens directly — no login required. Expand **Servers → F1 Data Wareh
 | `drivers` | Driver profiles |
 | `constructors` | Constructor (team) profiles |
 | `results` | Race finishing results per driver |
-| `driverstandings` | Driver championship standings after each race |
-| `constructorstandings` | Constructor championship standings after each race |
 | `constructorresults` | Constructor points per race |
 | `qualifying` | Qualifying session times (Q1/Q2/Q3) |
 | `pitstops` | Pit stop times per driver per race |
