@@ -12,7 +12,7 @@ A self-contained PostgreSQL + pgAdmin environment for demonstrating OLAP queries
 docker compose up -d
 ```
 
-Then open **http://localhost:5050** in a browser.
+Then open **<http://localhost:5050>** in a browser.
 
 pgAdmin opens directly — no login required. Expand **Servers → F1 Data Warehouse** in the left panel, right-click → **Query Tool**, and enter the database password when prompted:
 
@@ -26,7 +26,7 @@ pgAdmin opens directly — no login required. Expand **Servers → F1 Data Wareh
 13 tables covering F1 seasons from 2010 onwards:
 
 | Table | Description |
-|---|---|
+| --- | --- |
 | `circuits` | Race circuits with location and coordinates |
 | `seasons` | Championship years |
 | `races` | Individual race events per season |
@@ -43,19 +43,16 @@ pgAdmin opens directly — no login required. Expand **Servers → F1 Data Wareh
 
 ### Dimensional Fact Model
 
-Star schema centred on `results`. Blue nodes are core dimensions, green is the bridge dimension (`races`), purple is the lookup dimension (`status`), and orange is the fact table.
-
+Star schema centred on `Results`.
 ![DFM diagram](f1.png)
 
 ## Connection Details
 
-| | |
-|---|---|
-| Host | `localhost` |
-| Port | `5432` |
-| Database | `f1_dw` |
-| Username | `f1user` |
-| Password | `f1pass` |
+**Host**: `localhost`
+**Port**: `5432`
+**Database**: `f1_dw`
+**Username**: `f1user`
+**Password**: `f1pass`
 
 These credentials work for any external SQL client (DBeaver, DataGrip, psql, etc.).
 
@@ -172,7 +169,7 @@ ORDER BY
 
 ## Project Structure
 
-```
+```shell
 .
 ├── ddl.sql              # Table definitions
 ├── data.sql             # Seed data
