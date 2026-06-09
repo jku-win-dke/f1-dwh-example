@@ -265,9 +265,10 @@ docker compose down -v && docker compose up -d
 
 ### 1. Ferrari Pit Stop Durations with Running Average (Window Function)
 
-Per-stop duration and year-to-date running average for Ferrari drivers in 2023, excluding outliers ≥ 60 s.
+For the 2023 season, return the race name, Grand Prix round, driver surname, pit stop duration (seconds), and the cumulative year-to-date average pit stop duration. Include only Ferrari drivers and exclude pit stops lasting ≥ 60 seconds. Compute the cumulative average using a window function ordered by Grand Prix round and pitstop. Sort the output by Grand Prix round and pit stop.
 
-```sql
+The columns of the output should have the following names: race_name, gp_round, driver, stop_duration_secs, ferrari_avg_duration_ytd.
+
 SELECT 
     ra.name AS race_name,
     ra.round AS gp_round, 
